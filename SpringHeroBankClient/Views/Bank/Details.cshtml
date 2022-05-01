@@ -1,0 +1,37 @@
+﻿@model SpringHeroBankClient.ServiceReference1.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @Html.ActionLink("Chuyển tiền", "Transfer", new { id = Model.AccountNumber })
+    @Html.ActionLink("Rút tiền", "Withdrawal")
+    @Html.ActionLink("Gửi tiền", "Deposit")
+    @Html.ActionLink("Back to List", "Index")
+
+</p>
